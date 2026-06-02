@@ -1,0 +1,126 @@
+/* Palette de couleurs */
+:root {
+    --primary-color: #1A365D;      
+    --accent-color: #FF6B6B;       
+    --dark-color: #111827;         
+    --light-color: #F9FAFB;        
+    --card-bg: #FFFFFF;            
+
+    /* Typographie */
+    --font-title: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Espacements et structure */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 16px;          
+    
+    /* Transition globale */
+    --transition-smooth: all 0.3s ease;
+}
+
+/* reset css de base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+/* 3. STYLE DE LA BARRE DE NAVIGATION (NAVBAR) */
+
+/* Navbar fixe en haut avec flou d'arrière-plan moderne */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: var(--spacing-md) 0;
+    transition: var(--transition-smooth);
+    z-index: 1030;
+}
+
+/* Alignement et visibilité du Logo AfriTalent */
+.navbar-brand {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+    color: var(--accent-color);
+}
+
+/* Alignement des liens de navigation */
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--dark-color) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+}
+
+/* Effet hover doux sur les liens */
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(26, 54, 93, 0.05);
+}
+
+/* Bouton d'action principal (CTA) "Rejoindre AfriTalent" très visible */
+.btn-cta-nav {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    font-family: var(--font-body);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: var(--border-radius);
+    margin-left: var(--spacing-md);
+    box-shadow: 0 4px 14px rgba(26, 54, 93, 0.2);
+}
+
+.btn-cta-nav:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+    color: #ffffff !important;
+}
+
+/* Correction responsive pour le menu mobile */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        align-items: flex-start;
+        padding-top: var(--spacing-md);
+    }
+    .btn-cta-nav {
+        margin-left: 0;
+        margin-top: var(--spacing-sm);
+        width: 100%;
+        text-align: center;
+    }
+}
