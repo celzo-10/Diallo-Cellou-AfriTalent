@@ -124,3 +124,135 @@ a {
         text-align: center;
     }
 }
+/* ==========================================================================
+   4. SECTION HERO (Accueil)
+   ========================================================================== */
+.hero-section {
+    padding: 120px 0 80px 0;
+    background: radial-gradient(circle at 90% 10%, rgba(255, 107, 107, 0.05) 0%, rgba(26, 54, 93, 0) 70%);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Typographie expressive adaptative */
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -1px;
+}
+
+.hero-stats {
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: var(--spacing-md);
+}
+
+/* Style des compteurs (qui seront animés en JS plus tard) */
+.stat-number {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6B7280;
+}
+
+/* ==========================================================================
+   5. SECTION "COMMENT ÇA MARCHE" - BENTO GRID
+   ========================================================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+/* Cartes Bento asymétriques */
+.bento-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Effet Bento : On fait faire une double largeur à la première carte */
+.bento-card:nth-child(1) {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #1A365D 0%, #2A4365 100%);
+    color: #ffffff;
+}
+.bento-card:nth-child(1) h3 {
+    color: #ffffff;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.bento-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-color);
+}
+.bento-card:nth-child(1) .bento-icon {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   6. SECTION CATÉGORIES DE SERVICES (Effets Hover)
+   ========================================================================== */
+.category-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+/* Effets de survol CSS demandés : ombre, transformation et changement de couleur */
+.category-card:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 25px -5px rgba(255, 107, 107, 0.1), 0 10px 10px -5px rgba(255, 107, 107, 0.04);
+}
+
+.category-card:hover .cat-icon {
+    color: var(--accent-color);
+    transform: rotate(10deg);
+}
+
+.cat-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   7. AUTRES SECTIONS (Témoignages & CTA)
+   ========================================================================== */
+.testimonials-section {
+    background-color: #F3F4F6;
+    padding: 80px 0;
+}
+
+.testimonial-item {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    color: white;
+    padding: 60px;
+    border-radius: var(--border-radius);
+}
